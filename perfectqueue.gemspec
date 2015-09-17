@@ -34,16 +34,10 @@ Gem::Specification.new do |s|
   s.summary = "Highly available distributed queue built on RDBMS or SimpleDB"
   s.test_files = ["test/backend_test.rb", "test/exec_test.rb", "test/stress.rb", "test/test_helper.rb", "test/cat.sh", "test/echo.sh", "test/fail.sh", "test/huge.sh", "test/success.sh"]
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<sequel>, ["~> 3.48.0"])
-    else
-      s.add_dependency(%q<sequel>, ["~> 3.48.0"])
-    end
-  else
-    s.add_dependency(%q<sequel>, ["~> 3.48.0"])
-  end
+  s.add_dependency "sequel", "~> 3.48.0"
+  s.add_development_dependency "rake", "~> 0.9.2"
+  s.add_development_dependency "rspec", "~> 2.10.0"
+  s.add_development_dependency "jeweler"
+  s.add_development_dependency "test-unit"
 end
 
